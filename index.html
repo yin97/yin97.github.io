@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AirSoft — Games</title>
-<meta name="description" content="Blocklet va boshqa puzzle o'yinlari.">
+<meta name="description" content="Blocklet — block puzzle for Android and iOS.">
 <link rel="icon" href="blocklet-icon.png">
 <style>
   :root{
-    --bg:#F3EEE8; --panel:#FFFFFF; --ink:#3A342E; --soft:#847A6E;
+    --bg:#F3EEE8; --panel:#FFFFFF; --ink:#3A342E; --soft:#6F6659;
     --line:#E2D9CE; --green:#7FB8A4; --yellow:#E8C468; --terra:#E09A78;
   }
   @media (prefers-color-scheme: dark){
-    :root{ --bg:#1A1815; --panel:#232019; --ink:#EDE6DC; --soft:#9A9086; --line:#332E27; }
+    :root{ --bg:#141110; --panel:#221E1A; --ink:#F0E9DF; --soft:#A89C8E; --line:#463D33; }
   }
   *{box-sizing:border-box}
   body{
@@ -20,9 +20,29 @@
     font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:680px; margin:0 auto; padding:72px 24px 96px}
-  header{display:flex; align-items:center; gap:20px; margin-bottom:56px}
-  header img{width:76px; height:76px; border-radius:18px; display:block}
+  .wrap{max-width:680px; margin:0 auto; padding:40px 24px 96px}
+
+  /* til almashtirgich */
+  .langs{display:flex; gap:6px; justify-content:flex-end; margin-bottom:28px}
+  .langs button{
+    font:inherit; font-size:13px; font-weight:600; letter-spacing:.03em;
+    padding:5px 12px; border-radius:999px; cursor:pointer;
+    background:transparent; color:var(--soft);
+    border:1px solid var(--line);
+  }
+  .langs button:hover{color:var(--ink)}
+  .langs button[aria-pressed="true"]{
+    background:var(--ink); color:var(--bg); border-color:var(--ink);
+  }
+
+  /* faqat tanlangan til ko'rinadi; JS ishlamasa o'zbekcha qoladi */
+  [data-l]{display:none}
+  html[lang="uz"] [data-l="uz"],
+  html[lang="ru"] [data-l="ru"],
+  html[lang="en"] [data-l="en"]{display:revert}
+
+  header{display:flex; align-items:center; gap:20px; margin-bottom:48px}
+  header img{width:76px; height:76px; border-radius:18px; display:block; flex:none}
   h1{font-size:30px; margin:0; letter-spacing:-.02em}
   header p{margin:4px 0 0; color:var(--soft); font-size:15px}
 
@@ -35,11 +55,11 @@
   .row{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap}
   .tag{
     font-size:12px; font-weight:600; letter-spacing:.04em; text-transform:uppercase;
-    padding:3px 9px; border-radius:999px; color:#2C2721;
+    padding:3px 9px; border-radius:999px; color:#2C2721; white-space:nowrap;
   }
   .live{background:var(--green)}
   .soon{background:var(--line); color:var(--soft)}
-  .links{margin-top:16px; display:flex; gap:18px; flex-wrap:wrap}
+  .links{margin-top:16px}
   a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line)}
   a:hover{border-bottom-color:var(--soft)}
   .muted a{color:var(--soft)}
@@ -52,46 +72,98 @@
 <body>
 <div class="wrap">
 
+  <div class="langs">
+    <button type="button" data-set="uz" aria-pressed="true">UZ</button>
+    <button type="button" data-set="ru" aria-pressed="false">RU</button>
+    <button type="button" data-set="en" aria-pressed="false">EN</button>
+  </div>
+
   <header>
     <img src="blocklet-icon.png" alt="">
     <div>
       <h1>AirSoft Games</h1>
-      <p>Puzzle o'yinlari · Android va iOS</p>
+      <p data-l="uz">Puzzle o'yinlari · Android va iOS</p>
+      <p data-l="ru">Головоломки · Android и iOS</p>
+      <p data-l="en">Puzzle games · Android and iOS</p>
     </div>
   </header>
 
   <div class="card">
     <div class="row">
       <h2>Blocklet</h2>
-      <span class="tag live">Chiqdi</span>
+      <span class="tag live" data-l="uz">Chiqdi</span>
+      <span class="tag live" data-l="ru">Вышла</span>
+      <span class="tag live" data-l="en">Available</span>
     </div>
-    <p>8×8 taxta, uchta shakl, qator va ustunlarni tozalash. Cheksiz o'yin.</p>
+    <p data-l="uz">8×8 taxta, uchta shakl, qator va ustunlarni tozalash. Cheksiz o'yin.</p>
+    <p data-l="ru">Доска 8×8, три фигуры, очистка строк и столбцов. Бесконечная игра.</p>
+    <p data-l="en">An 8×8 board, three pieces at a time, clearing rows and columns. Endless play.</p>
     <div class="links">
-      <a href="blocklet/privacy.html">Maxfiylik siyosati</a>
+      <a href="blocklet/privacy.html" data-l="uz">Maxfiylik siyosati</a>
+      <a href="blocklet/privacy.html" data-l="ru">Политика конфиденциальности</a>
+      <a href="blocklet/privacy.html" data-l="en">Privacy policy</a>
     </div>
   </div>
 
   <div class="card">
     <div class="row">
       <h2>Unjam</h2>
-      <span class="tag soon">Tayyorlanmoqda</span>
+      <span class="tag soon" data-l="uz">Tayyorlanmoqda</span>
+      <span class="tag soon" data-l="ru">В разработке</span>
+      <span class="tag soon" data-l="en">In development</span>
     </div>
-    <p>Bloklarni sirg'antirib mos rangli eshikka chiqarish.</p>
+    <p data-l="uz">Bloklarni sirg'antirib mos rangli eshikka chiqarish.</p>
+    <p data-l="ru">Сдвигайте блоки к выходу подходящего цвета.</p>
+    <p data-l="en">Slide the blocks out through the matching coloured exit.</p>
   </div>
 
   <div class="card">
     <div class="row">
       <h2>Port Out</h2>
-      <span class="tag soon">Tayyorlanmoqda</span>
+      <span class="tag soon" data-l="uz">Tayyorlanmoqda</span>
+      <span class="tag soon" data-l="ru">В разработке</span>
+      <span class="tag soon" data-l="en">In development</span>
     </div>
-    <p>Konteyner porti — kran va to'siqlar bilan.</p>
+    <p data-l="uz">Konteyner porti — kran va to'siqlar bilan.</p>
+    <p data-l="ru">Контейнерный порт — с краном и препятствиями.</p>
+    <p data-l="en">A container port — with cranes and obstacles.</p>
   </div>
 
   <footer>
-    <p>Aloqa: <a href="mailto:islomyuldashev3007@gmail.com">islomyuldashev3007@gmail.com</a></p>
+    <p>
+      <span data-l="uz">Aloqa:</span><span data-l="ru">Контакт:</span><span data-l="en">Contact:</span>
+      <a href="mailto:islomyuldashev3007@gmail.com">islomyuldashev3007@gmail.com</a>
+    </p>
     <p class="muted">© 2026 AirSoft</p>
   </footer>
 
 </div>
+
+<script>
+(function () {
+  var LANGS = ['uz', 'ru', 'en'];
+  var buttons = document.querySelectorAll('.langs button');
+
+  function setLang(code) {
+    if (LANGS.indexOf(code) < 0) code = 'uz';
+    document.documentElement.lang = code;
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].setAttribute('aria-pressed',
+        buttons[i].getAttribute('data-set') === code ? 'true' : 'false');
+    }
+    try { localStorage.setItem('lang', code); } catch (e) {}
+  }
+
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  setLang(saved || (navigator.language || 'uz').slice(0, 2).toLowerCase());
+
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function () {
+      setLang(this.getAttribute('data-set'));
+    });
+  }
+})();
+</script>
 </body>
 </html>
