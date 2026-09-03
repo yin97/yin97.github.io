@@ -1,8 +1,6 @@
 # app-ads.txt — IAB Tech Lab spec
-# Bu fayl domen ILDIZIDA turishi shart: https://<username>.github.io/app-ads.txt
-#
-# pub-9371412168904128 ni AdMob'dagi haqiqiy publisher ID bilan almashtir:
-#   AdMob -> Settings -> Account information -> Publisher ID
+# Domen ildizida turishi shart: https://yin97.github.io/app-ads.txt
+# Play Console -> Store listing -> Website maydonidagi domen bilan bir xil bo'lishi kerak.
 # f08c47fec0942fa0 — Google'ning TAG ID si, o'zgarmaydi.
 
 google.com, pub-9371412168904128, DIRECT, f08c47fec0942fa0
